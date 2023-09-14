@@ -1,0 +1,48 @@
+---
+instances:
+  amount_master: 1
+  amount_ubuntu: 0
+  amount_centos: 0
+
+hardware:
+  master:
+    cpu: 4
+    memory: 8192
+  ubuntu:
+    cpu: 1
+    memory: 1024
+  centos:
+    cpu: 1
+    memory: 1024
+
+vm_box:
+  ubuntu:
+    name: "bento/ubuntu-22.04-arm64"
+    version: "202306.30.0"
+  centos:
+    name: "shk/centos-stream-9-arm64"
+    version: "2023.06.16"
+
+master_synced_src: ""
+master_synced_dest: ""
+
+ansible_playbook_path: ""
+ansible_playbook_switch: 
+  master:
+    synced-folder: true
+    authorize-pubkey: true
+    install-ansible: true
+    install-mitogen: true
+    install-docker: true
+    install-minikube: true
+    install-gitlab: true
+    usermod-groups: true
+  ubuntu:
+    authorize-pubkey: true
+    install-docker: false
+    usermod-groups: true
+  centos:
+    authorize-pubkey: true
+    install-docker: false
+    usermod-groups: true
+...
