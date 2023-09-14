@@ -1,6 +1,6 @@
 ## Parameters:
 ```
-Apple Silicon M1 with 16GB of RAM
+Apple Silicon M1
 Vagrant version 2.3.4
 VMware Fusion Player version 13.0.2
 ```
