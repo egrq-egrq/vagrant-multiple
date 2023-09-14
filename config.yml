@@ -17,7 +17,7 @@ hardware:
 
 vm_box:
   ubuntu:
-    name: "bento/ubuntu-22.04-arm64"
+    name: "bento/ubuntu-20.04-arm64"
     version: "202306.30.0"
   centos:
     name: "shk/centos-stream-9-arm64"
@@ -29,20 +29,23 @@ master_synced_dest: ""
 ansible_playbook_path: ""
 ansible_playbook_switch: 
   master:
-    synced-folder: true
     authorize-pubkey: true
-    install-ansible: true
-    install-mitogen: true
+    copy-sshkeys: true
+    synced-folder: true
+    install-ansible: false
+    install-mitogen: false
     install-docker: true
-    install-minikube: true
+    install-minikube: false
     install-gitlab: true
     usermod-groups: true
   ubuntu:
     authorize-pubkey: true
+    copy-sshkeys: false
     install-docker: false
     usermod-groups: true
   centos:
     authorize-pubkey: true
+    copy-sshkeys: false
     install-docker: false
     usermod-groups: true
 ...

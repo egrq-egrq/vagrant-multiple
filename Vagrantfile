@@ -14,8 +14,8 @@ vm_box_version_centos     = (cfg["vm_box"] && cfg["vm_box"]["centos"]) ? cfg["vm
 ansible_playbook_path     = cfg["ansible_playbook_path"]
 ansible_playbook_switch   = cfg["ansible_playbook_switch"]
 
-master_synced_src        = cfg["master_synced_src"]
-master_synced_dest       = cfg["master_synced_dest"]
+master_synced_src         = cfg["master_synced_src"]
+master_synced_dest        = cfg["master_synced_dest"]
 
 Vagrant.configure("2") do |config|
   
@@ -56,9 +56,14 @@ Vagrant.configure("2") do |config|
         ansible.playbook    = "#{ansible_playbook_path}/authorize-pubkey/playbook.yml"
       end
 
-      # Ansible install and Copy ssh keys to ansible-server
+      # Ansible install 
       master.vm.provision "ansible", run: (ansible_playbook_switch["master"]["install-ansible"] ? "always" : "never") do |ansible|
         ansible.playbook    = "#{ansible_playbook_path}/install-ansible/playbook.yml"
+      end
+
+      # Copy ssh keys to server
+      master.vm.provision "ansible", run: (ansible_playbook_switch["master"]["copy-sshkeys"] ? "always" : "never") do |ansible|
+        ansible.playbook    = "#{ansible_playbook_path}/copy-sshkeys/playbook.yml"
       end
 
       # Mitogen install
