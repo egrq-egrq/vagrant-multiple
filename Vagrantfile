@@ -1,3 +1,6 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
 BASE_BOX_IMAGE    = "bento/centos-stream-10"
 BASE_BOX_VERSION  = "202510.26.0"
 BASE_IP           = "192.168.56."
