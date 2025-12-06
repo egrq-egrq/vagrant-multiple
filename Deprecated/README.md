@@ -1,3 +1,5 @@
+# Deprecated
+
 ## Configuring
 `config.yml`
 
