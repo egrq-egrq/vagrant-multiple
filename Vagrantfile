@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
         echo "--------------------------------------------------"
         echo "  Hostname : node-#{i}"
         echo "  IP       : #{BASE_IP}#{100 + i}"
-        echo "  Time     : $(TZ='Europe/Moscow' date)""
+        echo "  Time     : $(TZ='Europe/Moscow' date)"
         echo "=================================================="
       SHELL
 
