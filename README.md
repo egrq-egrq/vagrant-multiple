@@ -6,7 +6,7 @@
 
 ---
 
-## Available Configurations
+### Available Configurations
 
 | Name | Virtualization | Status | Usage | Description |
 |:----|:--------------:|:------:|:--------------|:------------|
@@ -16,5 +16,5 @@
 
 ---
 
-## Deprecated
+### Deprecated
 `Historical archive / legacy configurations`
